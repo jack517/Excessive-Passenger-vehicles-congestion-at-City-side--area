@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pushpak</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/angular-min.js"></script>
+    <script type="text/javascript" src="js/cabsDetailsCtrl.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <style type="text/css">
+    	body {
+   		display: flex;
+    	min-height: 100vh;
+    	flex-direction: column;
+  		}
+
+  		main {
+    	flex: 1 0 auto;
+  		}
+  	
+    </style>
+    <script type="text/javascript" >
+		(function($){
+  		$(function(){
+    	$('.button-collapse').sideNav();
+  		}); // end of document ready
+		})(jQuery); // end of jQuery name space
+	</script>
+		
+</head>
+<body >
+	<header>
+	<div class="navbar-fixed green darken-1">
+    <nav class="#3d5afe indigo accent-3" role="navigation">
+    <!--Lalit Chauhan-->
+
+	  <div class="container"> 
+      <div class="nav-wrapper">
+      	<a class="button-collapse" data-activates="nav-mobile" href="#">
+		<i class="material-icons">menu</i>
+		</a>
+      	<a href="flightTracking.html">CMP</a>
+      	
+        <ul class="right hide-on-med-and-down">
+          <!-- <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li> -->
+          <li ><a href="flightTracking.html">Flight Tracking</a></li>
+          <li><a href="createEvent.html">Create Event</a></li>
+          <li ><a href="addDelay.html">Add Delay</a></li>
+          <li class="active"> <a href="cabsPresent.html">Cab Details</a></li>
+          <li > <a href="bin/logout.php">Logout</a></li>
+      <!--     <li><a href="Proj.html">Profile</a></li> -->
+          
+        </ul>
+        <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+         <li ><a href="flightTracking.html">Flight Tracking</a></li>
+          <li><a href="createEvent.html">Create Event</a></li>
+          <li ><a href="addDelay.html">Add Delay</a></li>
+          <li class="active"> <a href="cabPresent.html">Cab Details</a></li>
+          <li> <a href="bin/logout.php">Logout</a></li>
+      </ul>
+      </div>
+      </div>
+    </nav>
+   
+  	
+  	</div>
+	</header>
+	<main ng-app="mainApp" ng-controller="cabsDetailsCtrl">
+		<div class="container">
+		  <h3 class="center-align">Airports Authority of India</h3>
+      <h4 class="center-align">(For Toll Tax People)</h3>
+      <h5 class="center-align">Select Airport</h5>
+      <div class="row">
+      <div class="col s4 offset-s4">
+
+      <div class="input-field col s12">
+              
+              <div input-field>
+                <select class="browser-default" ng-model="airport">
+                               <option >allahabad-lxi</option>
+                              <option >lucknow-lko</option>
+              </select>
+
+            <br>
+            <br>
+            <br>
+            </div>
+     
+			
+		</div>
+
+    </div>
+    <div class="row">
+      <div class="col s4 offset-s4">
+              <a class="waves-effect waves-light btn" ng-click="getCabs()">Get Cabs</a>
+      </div>
+      
+    </div>
+    <p ng-show="flag" class="center-align">
+    Current number of Cabs at {{airport}} is {{cabs}} 
+    </p>
+    <div class="row"  ng-show="flag" >
+      <div class="col s4 offset-s2">
+              <a class="waves-effect waves-light btn" ng-click="increaseCab()">Increase Cabs</a>
+      </div>
+      <div class="col s4 offset-s2">
+              <a class="waves-effect waves-light btn" ng-click="decreaseCab()">Decrease Cabs</a>
+      </div>
+    </div>
+    </div>
+
+    </div>
+	</main>
+	<footer>
+  <div class="container">
+    <div class="row">
+    <div class="col s4 offset-s4">
+      <h6 class="center-align"><a class="center-align" style="color: #000000" href="http://madewithlove.org.in" target="_blank">Made with <span style="color: #e74c3c"  >&hearts;</span> in India</a>
+      </h6>
+    </div>
+      
+    </div>
+    
+  </div>
+  </footer>
+</body>
+</html>
+

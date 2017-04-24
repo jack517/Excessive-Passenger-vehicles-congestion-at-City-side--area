@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Minimal example</title>
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+
+    <!-- Your app -->
+    <script type="text/javascript" src="js/testCtrl.js" >
+    	
+
+    </script>
+</head>
+<body ng-app="materializeApp" ng-controller="BodyController">
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="section col s4">
+                <div input-field>
+                    <select ng-model="tree" material-select>
+                        <option ng-repeat="value in airportList">{{value}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section col s8">
+                <h5>You selected: <b>{{tree}}</b></h5>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

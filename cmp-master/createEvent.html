@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Pushpak</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script type="text/javascript" src="js/angular-min.js"></script>
+     <script type="text/javascript" src="js/createEventCtrl.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body ng-app="mainApp" ng-controller="createEventCtrl">
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+   
+    <nav class="navbar" style="background:blue;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:white;">CPM</a>
+    </div>
+    <ul class="nav navbar-nav" style="float:right;">
+      <li><a href="flightTracking.html" style="color:white;">FlightTracking</a></li>
+      <li><a href="createEvent.html" style="color:white;">CreateEvent</a></li>
+      <li><a href="addDelay.html" style="color:white;">Add Delay</a></li>
+      <li><a href="cabsPresent.html" style="color:white;">Cabs Details</a></li>
+    <li> <a href="bin/logout.php">Logout</a></li>
+    
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+  <div class="row">
+      <h3>Select Airport</h3>
+      <br>
+     
+          <select ng-model="airportId" >
+            <option ng-repeat="x in airportList">{{x}}</option>
+          </select>
+       <br>    
+      <h3> Date of Pickup/ Visit</h3>
+      <br>
+      <input type="text" name="" ng-model="inputDate.day"> /
+      <input type="text" name="" ng-model="inputDate.month"> /
+      <input type="text" name="" ng-model="inputDate.year"> 
+     </div>
+      <button type="button" class="btn btn-success btn btn-lg" ng-click="getFlights()">Get Flight</button>
+      <div  ng-show="flag">
+       <h3> Select Flight</h3> <br>
+        <br>
+     
+          <select ng-model="flightId" >
+            <option ng-repeat="x in flightList">{{x}}</option>
+          </select>
+       <br> 
+          <input type="text" name="" ng-model="distance" placeholder="In Kilometers">
+
+        <br>   
+     
+           <button type="button" class="btn btn-success btn btn-lg"  ng-click="createEvent()">Create Reminder</button>
+       </div>
+  </div>
+    
+  </div>
+
+    
+
+
+  </body>
+</html>

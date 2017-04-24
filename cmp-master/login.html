@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pushpak</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/angular-min.js"></script>
+    <script type="text/javascript" src="js/loginCtrl.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <style type="text/css">
+    	body {
+   		display: flex;
+    	min-height: 100vh;
+    	flex-direction: column;
+  		}
+
+  		main {
+    	flex: 1 0 auto;
+  		}
+  	
+    </style>
+    <script type="text/javascript" >
+		(function($){
+  		$(function(){
+    	$('.button-collapse').sideNav();
+  		}); // end of document ready
+		})(jQuery); // end of jQuery name space
+	</script>
+		
+</head>
+<body ng-app="mainApp" ng-controller="loginCtrl">
+	<header>
+	<div class="navbar-fixed green darken-1">
+    <nav class="#3d5afe indigo accent-3" role="navigation">
+    <!--Lalit Chauhan-->
+
+	  <div class="container"> 
+      <div class="nav-wrapper">
+      	<a class="button-collapse" data-activates="nav-mobile" href="#">
+		<i class="material-icons">menu</i>
+		</a>
+      	<a href="index.html">CMP</a>
+      	
+        <ul class="right hide-on-med-and-down">
+          <!-- <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li> -->
+
+          <li class="active"><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+      <!--     <li><a href="Proj.html">Profile</a></li> -->
+          
+        </ul>
+        <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+          <li class="active"><a href="html">Login</a></li>
+       <!--    <li><a href="signUp.html">Sign Up</a></li> -->
+          <li><a href="Proj.html">Profile</a></li>
+      </ul>
+      </div>
+      </div>
+    </nav>
+   
+  	
+  	</div>
+	</header>
+	<main ng-app="mainApp" ng-controller="loginCtrl">
+
+		<div class="container">
+			<section>
+			<div class="container">
+			<br><br><br> <br> <br>
+			
+			<div class="row">
+				<div class="col s6 offset-s3">
+
+  				<div class="row">
+    				<div class="input-field col s12">
+      				<input  id="userName" type="text" class="validate" ng-model="userName">
+      				<label class="active" for="userName">Email id</label>
+    				</div>
+    				<div class="input-field col s12">
+      				<input  id="password" type="password" class="validate" ng-model="password">
+      				<label class="active" for="password">Password</label>
+    				</div>
+    				<div class="col s4 offset-s4">
+    					<a class="waves-effect waves-light btn" ng-click="login()">Login</a>
+    				</div>
+ 				</div>
+				</div>
+			
+			</div>
+	
+			</div>
+			</section>
+			
+			
+		</div>
+	</main>
+	<footer>
+  <div class="container">
+    <div class="row">
+    <div class="col s4 offset-s4">
+      <h6 class="center-align"><a class="center-align" style="color: #000000" href="http://madewithlove.org.in" target="_blank">Made with <span style="color: #e74c3c"  >&hearts;</span> in India</a>
+      </h6>
+    </div>
+      
+    </div>
+    
+  </div>
+  </footer>
+</body>
+</html>

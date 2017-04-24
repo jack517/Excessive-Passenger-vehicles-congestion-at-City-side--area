@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Pushpak</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script type="text/javascript" src="js/angular-min.js"></script>
+     <script type="text/javascript" src="js/flightTrackingCtrl.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body ng-app="mainApp" ng-controller="flightTrackingCtrl">
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+   
+    <nav class="navbar" style="background:blue;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:White;">CPM</a>
+    </div>
+    <ul class="nav navbar-nav" style="float:right;">
+      <li ><a href="flightTracking.html" style="color:White;">Flight Tracking</a></li>
+      <li class="active"><a href="createEvent.html" style="color:White;">Create Event</a></li>
+      <li><a href="addDelay.html" style="color:White;">Add Delay</a></li>
+      <li><a href="cabsPresent.html" style="color:White;">Cab Details</a></li>
+      <li> <a href="bin/logout.php">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+  <div class="row">
+      <h5>Select Airport</h5>
+      <br>
+     
+          <select ng-model="airportId" >
+            <option ng-repeat="x in airportList">{{x}}</option>
+          </select>
+       <br>    
+      <h5> Date of Pickup/ Visit</h5>
+      <br>
+      <input type="text" name="" ng-model="inputDate.day"> /
+      <input type="text" name="" ng-model="inputDate.month"> /
+      <input type="text" name="" ng-model="inputDate.year"> 
+     </div>
+      <button type="button" class="btn btn-primary btn btn-lg" style="margin-top:-25px;margin-left:630px;" ng-click="getFlights()">Get Flight</button>
+      <div  ng-show="flag">
+        <br><br><br><h3>Select Flight</h3> <br>
+        <br>
+        
+     
+          <select ng-model="flightId" >
+            <option ng-repeat="x in flightList">{{x}}</option>
+          </select>
+       <br>
+        <button type="button" class="btn btn-primary" ng-click="getDelay()" style="margin-top:4px;margin-left:630px;">Get Status</button>
+        <table class="table table-striped">
+          
+          <thead>
+            <tr><th>
+            Schedule Departure
+          </th>
+            <th>Delay in Schedule Departure</th>
+          
+          <th>
+            Schedule Arrival
+          </th>
+           <th>
+            Delay in Schedule Arrival
+          </th> 
+          </thead>
+          <tr ng-repeat="x in flightData">
+            <td>
+            {{x.schedule_departure}}
+            </td>
+            <td>
+            {{x.delay_in_schedule_departure}}
+            </td>
+            <td>
+            {{x.schedule_arrival}}
+            </td>
+            <td>
+             {{x.delay_in_schedule_arrival}}
+            </td>
+        </table>
+
+      </div>
+
+      
+
+     
+
+  </div>
+    
+  </div>
+
+    
+
+
+  </body>
+</html>
